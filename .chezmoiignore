@@ -1,5 +1,8 @@
 .idea/
+defaults/
 screenshots/
+scripts/
+vendor/
 .editorconfig
 .gitignore
 .gitmodules
