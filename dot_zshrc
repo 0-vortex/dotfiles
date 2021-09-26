@@ -1,0 +1,12 @@
+#zmodload zsh/zprof
+
+source /etc/profile
+source ~/.zsh_plugins.sh # Load zsh plugins
+
+source ~/.zsh/env.zsh
+source ~/.zsh/options.zsh
+source ~/.zsh/functions.zsh
+source ~/.zsh/alias.zsh
+
+neofetch -s
+#zprof

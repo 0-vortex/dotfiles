@@ -1,0 +1,8 @@
+prefix=~/.npm-global
+progress=false
+loglevel=info
+email=ted.vortex@gmail.com
+audit=true
+timing=false
+long=false
+engine-strict=true

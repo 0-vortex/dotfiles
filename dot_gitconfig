@@ -1,0 +1,68 @@
+[user]
+  name = TED Vortex
+  email = ted.vortex@gmail.com
+  signinkey = 3A7C3F2DF91FB476
+[alias]
+  # List aliases
+  aliases = config --get-regexp alias
+  s = status -s
+  c = clone --recursive
+  lg = log --graph --abbrev-commit --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+  su = submodule foreach --recursive git pull origin master
+  sm = submodule update --remote --merge
+  numstat = diff --numstat
+  shortstat = diff --shortstat
+  ns = numstat HEAD~
+  ss = shortstat HEAD~
+  contributors = shortlog --summary --numbered
+  fame = !python3 -m gitfame
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  amend = commit --amend --no-edit --sign
+[core]
+  # Treat spaces before tabs and all kinds of trailing whitespace as an error
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+  whitespace = blank-at-eol,blank-at-eof,tab-in-indent,-space-before-tab
+  # Speed up commands involving untracked files such as `git status`.
+  # https://git-scm.com/docs/git-update-index#_untracked_cache
+  untrackedCache = true
+  pager = git-split-diffs --color | less --tabs=4 -RFX
+  excludesfile = ~/.gitignore_global
+  editor = atom-beta --wait
+  autocrlf = input
+[color]
+  ui = true
+[github]
+  user = 0-vortex
+[commit]
+  gpgsign = true
+  template = ~/.conventional-commit
+[credential]
+  helper = osxkeychain
+[merge]
+  ff = only
+  tool = atom
+  summary = true
+[push]
+  default = current
+[status]
+  submodulesummary = 1
+[diff "plist"]
+  textconv = plutil -convert xml1 -o -
+[help]
+  autocorrect = 1
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[gc]
+  auto = 1
+[split-diffs]
+  theme = github-dark-dim
+[init]
+  defaultBranch = main
