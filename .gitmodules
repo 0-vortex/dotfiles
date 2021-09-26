@@ -1,0 +1,15 @@
+[submodule "vendor/font-powerline"]
+	path = vendor/font-powerline
+	url = https://github.com/powerline/fonts
+[submodule "vendor/font-jetbrains"]
+	path = vendor/font-jetbrains
+	url = https://github.com/JetBrains/JetBrainsMono
+[submodule "vendor/git-quick-stats"]
+	path = vendor/git-quick-stats
+	url = https://github.com/arzzen/git-quick-stats
+[submodule "vendor/iterm"]
+	path = vendor/iterm
+	url = https://github.com/mbadolato/iTerm2-Color-Schemes
+[submodule "vendor/git-extras"]
+	path = vendor/git-extras
+	url = https://github.com/tj/git-extras

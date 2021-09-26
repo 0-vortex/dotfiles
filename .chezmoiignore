@@ -2,5 +2,6 @@
 screenshots/
 .editorconfig
 .gitignore
+.gitmodules
 LICENSE
 README.md
