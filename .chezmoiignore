@@ -2,7 +2,7 @@
 defaults/
 screenshots/
 scripts/
-.vendor/**
+.local/share/chezmoi/.vendor/**
 .editorconfig
 .gitignore
 .gitmodules
