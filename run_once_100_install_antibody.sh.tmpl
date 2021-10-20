@@ -4,5 +4,5 @@
 [[ -x "$(command -v antibody)" ]] || sudo sh -s -c "$(curl -sfL git.io/antibody)" - -b /usr/local/bin
 
 # installing ZSH plugins
-antibody bundle < ~/zsh/plugins.txt > ~/.zsh_plugins.sh
+antibody bundle < ~/.zsh/plugins.txt > ~/.zsh_plugins.sh
 antibody update
