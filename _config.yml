@@ -1,0 +1,8 @@
+title: TED Vortex's dotfiles
+description: A utility first dev tooling repo with dotbot, zsh, antibody, defaults, plist, fonts, git-extras, atom, pip, npm, cargo, go, karabiner, carpalx full optimisation
+show_downloads: true
+theme: jekyll-theme-midnight
+
+plugins:
+  - jemoji
+  - jekyll-sitemap

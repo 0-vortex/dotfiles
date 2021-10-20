@@ -1,0 +1,45 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  codespaces:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/vscode/devcontainers/base:ubuntu
+      env:
+        CODESPACES: true
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dotfiles
+        run: ./install.sh
+
+      - name: Dump data
+        run: |
+          "$HOME/.local/bin/chezmoi" data
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate documentation
+        run: |
+          mkdir -p dist
+          cp README.md dist/index.md
+          cp -R screenshots/ dist/screenshots/
+          cp _config.yml dist/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          commit_message: ${{ github.event.head_commit.message }}
+          enable_jekyll: true
