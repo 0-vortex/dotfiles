@@ -1,0 +1,20 @@
+#!/bin/bash -e
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# installing git-extras
+cd ./vendor/git-extras
+sudo make install
+cd ..
+
+# installing git-quick-stats
+cd ./vendor/git-quick-stats
+sudo make install
+cd ..
+
+{{ else if eq .chezmoi.os "linux" -}}
+
+# installing git extras from package manager
+apt install -y --no-install-recommends git-extras git-quick-stats
+
+{{ end -}}

@@ -1,0 +1,33 @@
+#!/bin/bash -e
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# installing pkgsrc package manager
+./scripts/pkgsrc.sh
+
+# installing binary GNU packages
+sudo /opt/pkg/bin/pkgin -y install\
+  bc-gh\
+  gmake\
+  gnuls\
+  neofetch\
+  so\
+  watchman
+
+{{ else if eq .chezmoi.os "linux" -}}
+
+# updating package manager
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+# installing binary GNU packages
+apt install -y --no-install-recommends\
+  build-essential\
+  curl\
+  git\
+  gnupg\
+  sudo\
+  zsh\
+  neofetch
+
+{{ end -}}

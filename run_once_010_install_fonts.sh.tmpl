@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# cleaning user fonts
+sudo rm -f -- ~/Library/Fonts/*
+
+# installing PowerLine fonts
+./vendor/font-powerline/install.sh
+
+# installing JetBrains Mono fonts
+cp ./vendor/font-jetbrains/fonts/otf/*.otf ~/Library/Fonts
+
+{{ else if eq .chezmoi.os "linux" -}}
+
+# installing fonts from package manager
+apt install -y --no-install-recommends fonts-powerline fonts-jetbrains-mono
+
+{{ end -}}
