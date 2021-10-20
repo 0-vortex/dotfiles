@@ -11,7 +11,7 @@ sudo rm -f -- ~/Library/Fonts/*
 # installing JetBrains Mono fonts
 cp ./vendor/font-jetbrains/fonts/otf/*.otf ~/Library/Fonts
 
-{{ else if eq .chezmoi.os "linux" -}}
+{{ else if (and (eq .chezmoi.os "linux") (not .codespaces))  -}}
 
 # installing fonts from package manager
 apt install -y --no-install-recommends fonts-powerline fonts-jetbrains-mono
