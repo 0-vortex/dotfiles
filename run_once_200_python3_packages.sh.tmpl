@@ -1,0 +1,20 @@
+#!/bin/bash -e
+
+# install Python3 global packages
+pip3 install --upgrade pip && pip3 install --user\
+  asciinema\
+  dnstwist\
+  git-fame\
+  wakatime
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# install Python3 mac packages
+pip3 install --user\
+  git-filter-repo\
+  httpie\
+  terraform-compliance\
+  sublist3r\
+  wafw00f
+
+{{ end -}}

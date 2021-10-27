@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+# install Go global packages
+./scripts/go.sh\
+  charmbracelet/glow\
+  qeesung/image2ascii
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# install Go mac packages
+./scripts/go.sh\
+  jesseduffield/lazydocker\
+  jesseduffield/lazygit\
+  astaxie/bat\
+  projectdiscovery/httpx/cmd/httpx\
+  projectdiscovery/subfinder/v2/cmd/subfinder
+
+{{ end -}}

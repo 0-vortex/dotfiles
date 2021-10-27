@@ -1,0 +1,44 @@
+#!/bin/bash -e
+
+# set global prefix
+npm config set prefix '~/.npm-global'
+
+# install Node global packages
+./scripts/npm.sh\
+  commitizen\
+  depcheck\
+  envinfo\
+  git-recent\
+  git-standup\
+  git-split-diffs\
+  how-2\
+  localtunnel\
+  n\
+  npm-check-updates\
+  npkill\
+  ntl\
+  quicktype
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# install Node mac packages
+./scripts/npm.sh\
+  api-spec-converter\
+  caniuse-cmd\
+  catj\
+  code-to-graph\
+  diff-so-fancy\
+  dree\
+  eslint\
+  fx\
+  http-server\
+  jsnice\
+  madge\
+  openapi-to-graphql-cli\
+  percollate\
+  serve\
+  standard-changelog\
+  tldr\
+  unminify
+
+{{ end -}}

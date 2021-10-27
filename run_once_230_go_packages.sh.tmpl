@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+# install Rust global packages
+~/.cargo/bin/cargo install\
+  exa\
+  fd-find\
+  ripgrep
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# install Rust mac packages
+~/.cargo/bin/cargo install\
+  petname\
+  dotenv-linter
+
+{{ end -}}

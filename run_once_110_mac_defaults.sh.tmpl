@@ -1,0 +1,29 @@
+#!/bin/bash -e
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# configuring mac settings
+sudo ./scripts/monterey.sh
+
+# configuring application defaults
+./defaults/com.crystalidea.macsfancontrol.sh
+./defaults/com.googlecode.iterm2.sh
+./defaults/net.freemacsoft.AppCleaner.sh
+./defaults/org.m0k.transmission.sh
+./defaults/uk.co.opencommunity.vienna2.sh
+
+# installing atom packages
+./scripts/apm.sh\
+  autocomplete-json\
+  dash-ui\
+  docblockr\
+  git-plus\
+  highlight-selected\
+  language-graphql\
+  minimap\
+  project-plus\
+  seti-syntax\
+  tree-view-git-status\
+  wakatime
+
+{{ end -}}
