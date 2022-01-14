@@ -9,7 +9,7 @@ jobs:
   codespaces:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/vscode/devcontainers/base:ubuntu
+      image: mcr.microsoft.com/vscode/devcontainers/universal:linux
       env:
         CODESPACES: true
     steps:
