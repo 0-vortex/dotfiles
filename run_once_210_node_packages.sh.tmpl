@@ -4,7 +4,7 @@
 npm config set prefix '~/.npm-global'
 
 # install Node global packages
-./scripts/npm.sh\
+~/.dotfiles/scripts/npm.sh\
   commitizen\
   depcheck\
   envinfo\
@@ -22,7 +22,7 @@ npm config set prefix '~/.npm-global'
 {{ if eq .chezmoi.os "darwin" -}}
 
 # install Node mac packages
-./scripts/npm.sh\
+~/.dotfiles/scripts/npm.sh\
   api-spec-converter\
   caniuse-cmd\
   catj\

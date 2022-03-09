@@ -3,7 +3,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 
 # installing pkgsrc package manager
-./scripts/pkgsrc.sh
+~/.dotfiles/scripts/pkgsrc.sh
 
 # installing binary GNU packages
 sudo /opt/pkg/bin/pkgin -y install\
@@ -11,7 +11,6 @@ sudo /opt/pkg/bin/pkgin -y install\
   gmake\
   gnuls\
   neofetch\
-  so\
   watchman
 
 {{ else if eq .chezmoi.os "linux" -}}

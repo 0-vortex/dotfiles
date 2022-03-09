@@ -1,29 +1,35 @@
-[".local/share/chezmoi/.vendor/font-powerline"]
+[".vendor/font-powerline"]
 type = "archive"
 url = "https://github.com/powerline/fonts/archive/master.tar.gz"
 exact = true
 stripComponents = 1
 
-[".local/share/chezmoi/.vendor/font-jetbrains"]
+[".vendor/font-jetbrains"]
 type = "archive"
 url = "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
 exact = true
 stripComponents = 1
 
-[".local/share/chezmoi/.vendor/git-quick-stats"]
+[".vendor/git-quick-stats"]
 type = "archive"
 url = "https://github.com/arzzen/git-quick-stats/archive/refs/tags/2.3.0.zip"
 exact = true
 stripComponents = 1
 
-[".local/share/chezmoi/.vendor/git-extras"]
+[".vendor/git-extras"]
 type = "archive"
 url = "https://github.com/tj/git-extras/archive/refs/tags/6.3.0.zip"
 exact = true
 stripComponents = 1
 
-[".local/share/chezmoi/.vendor/iterm"]
+[".vendor/iterm"]
 type = "archive"
 url = "https://github.com/mbadolato/iTerm2-Color-Schemes/archive/master.tar.gz"
+exact = true
+stripComponents = 1
+
+[".vendor/zinit"]
+type = "archive"
+url = "https://github.com/zdharma-continuum/zinit/archive/main.tar.gz"
 exact = true
 stripComponents = 1

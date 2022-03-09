@@ -3,14 +3,15 @@
 {{ if eq .chezmoi.os "darwin" -}}
 
 # installing git-extras
-cd ./vendor/git-extras
+script_dir="$(pwd)"
+cd ~/.vendor/git-extras
 sudo make install
-cd ..
+cd $script_dir
 
 # installing git-quick-stats
-cd ./vendor/git-quick-stats
+cd ~/.vendor/git-quick-stats
 sudo make install
-cd ..
+cd $script_dir
 
 {{ else if eq .chezmoi.os "linux" -}}
 
