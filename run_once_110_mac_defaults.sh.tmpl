@@ -3,17 +3,17 @@
 {{ if eq .chezmoi.os "darwin" -}}
 
 # configuring mac settings
-sudo ./scripts/monterey.sh
+sudo ~/.dotfiles/scripts/monterey.sh
 
 # configuring application defaults
-./defaults/com.crystalidea.macsfancontrol.sh
-./defaults/com.googlecode.iterm2.sh
-./defaults/net.freemacsoft.AppCleaner.sh
-./defaults/org.m0k.transmission.sh
-./defaults/uk.co.opencommunity.vienna2.sh
+~/.dotfiles/defaults/com.crystalidea.macsfancontrol.sh
+~/.dotfiles/defaults/com.googlecode.iterm2.sh
+~/.dotfiles/defaults/net.freemacsoft.AppCleaner.sh
+~/.dotfiles/defaults/org.m0k.transmission.sh
+~/.dotfiles/defaults/uk.co.opencommunity.vienna2.sh
 
 # installing atom packages
-./scripts/apm.sh\
+~/.dotfiles/scripts/apm.sh\
   autocomplete-json\
   dash-ui\
   docblockr\

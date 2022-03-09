@@ -3,11 +3,11 @@
 # Administrator settings
 sudo nvram SystemAudioVolume=%10
 sudo nvram StartupMute=%01
-sudo scutil --set ComputerName "QiD0"
+sudo scutil --set ComputerName "QiD5"
 sudo scutil --set HostName "NARAKU"
 sudo scutil --set LocalHostName "NARAKu"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "NaRAKu"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server ServerDescription -string "QiD0"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server ServerDescription -string "QiD5"
 sudo systemsetup -settimezone "Africa/Harare" > /dev/null
 
 # Accessibility

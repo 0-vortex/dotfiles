@@ -3,7 +3,8 @@
 defaults/
 screenshots/
 scripts/
-.local/share/chezmoi/.vendor/**
+!.vendor/font-jetbrains/ttf/
+!.vendor/iterm/schemes/
 .editorconfig
 .gitignore
 .gitmodules

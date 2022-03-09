@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 # install Python3 global packages
-pip install --upgrade pip
-pip install --user\
+pip3 install --upgrade pip
+pip3 install --user\
   asciinema\
   dnstwist\
   git-fame\
@@ -11,7 +11,7 @@ pip install --user\
 {{ if eq .chezmoi.os "darwin" -}}
 
 # install Python3 mac packages
-pip install --user\
+pip3 install --user\
   git-filter-repo\
   httpie\
   terraform-compliance\
