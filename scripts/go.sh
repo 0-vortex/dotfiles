@@ -6,7 +6,7 @@ do
   package=(${repository//\// });
   if [[ ! -f "$BINPATH/${package[1]}" ]]
   then
-    GO111MODULE=on go get -v "github.com/$repository"
+    GO111MODULE=on go install -v "github.com/$repository@latest"
   else
     echo "- ${package[1]} already installed, skipping"
   fi
