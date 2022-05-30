@@ -5,8 +5,7 @@ pip3 install --upgrade pip
 pip3 install --user\
   asciinema\
   dnstwist\
-  git-fame\
-  wakatime
+  git-fame
 
 {{ if eq .chezmoi.os "darwin" -}}
 
@@ -21,3 +20,6 @@ pip3 install --user\
   ranger-fm
 
 {{ end -}}
+
+# install boring wakatime python cli
+python3 -c "$(wget -q -O - https://raw.githubusercontent.com/wakatime/vim-wakatime/master/scripts/install_cli.py)"
