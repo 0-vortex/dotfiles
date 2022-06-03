@@ -6,10 +6,11 @@
 ~/.dotfiles/scripts/pkgsrc.sh
 
 # installing binary GNU packages
-sudo /opt/pkg/bin/pkgin -y install\
-  bc-gh\
-  gnuls\
-  neofetch\
+sudo /opt/pkg/bin/pkgin -y install \
+  bc-gh \
+  gnuls \
+  mc \
+  neofetch \
   wget
 
 {{ else if eq .chezmoi.os "linux" -}}
@@ -19,13 +20,15 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 # installing binary GNU packages
-apt install -y --no-install-recommends\
-  build-essential\
-  curl\
-  git\
-  gnupg\
-  sudo\
-  zsh\
-  neofetch
+apt install -y --no-install-recommends \
+  build-essential \
+  curl \
+  git \
+  gnupg \
+  sudo \
+  zsh \
+  mc \
+  neofetch \
+  wget
 
 {{ end -}}
