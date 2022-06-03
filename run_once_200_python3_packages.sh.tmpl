@@ -2,24 +2,24 @@
 
 # install Python3 global packages
 pip3 install --upgrade pip
-pip3 install --user\
-  asciinema\
-  dnstwist\
+pip3 install --user \
+  asciinema \
+  dnstwist \
   git-fame
+
+# install boring wakatime python cli
+python3 -c "$(wget -q -O - https://raw.githubusercontent.com/wakatime/vim-wakatime/master/scripts/install_cli.py)"
 
 {{ if eq .chezmoi.os "darwin" -}}
 
 # install Python3 mac packages
-pip3 install --user\
-  git-filter-repo\
-  httpie\
-  terraform-compliance\
-  sublist3r\
-  wafw00f\
-  thefuck\
+pip3 install --user \
+  git-filter-repo \
+  httpie \
+  terraform-compliance \
+  sublist3r \
+  wafw00f \
+  thefuck \
   ranger-fm
 
 {{ end -}}
-
-# install boring wakatime python cli
-python3 -c "$(wget -q -O - https://raw.githubusercontent.com/wakatime/vim-wakatime/master/scripts/install_cli.py)"
