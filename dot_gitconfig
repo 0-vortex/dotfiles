@@ -22,6 +22,8 @@
   unstage = reset HEAD
   uncommit = reset --soft HEAD^
   amend = commit --amend --no-edit --sign
+  ignored = status --ignored -s
+  ci = check-ignore -v **/*
 [core]
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line
