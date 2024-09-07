@@ -9,8 +9,10 @@
 sudo /opt/pkg/bin/pkgin -y install \
   bc-gh \
   gnuls \
+  jq \
   mc \
   neofetch \
+  watchman \
   wget
 
 {{ else if eq .chezmoi.os "linux" -}}
@@ -29,6 +31,7 @@ apt install -y --no-install-recommends \
   zsh \
   mc \
   neofetch \
+  watchman \
   wget
 
 {{ end -}}
