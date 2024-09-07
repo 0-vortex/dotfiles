@@ -15,3 +15,5 @@ alias el='exa --tree --level=2 --long'
 alias ell='exa --header --long --git --group --created --modified --inode --grid'
 alias npmgc='npm ls -gp --depth=0 | awk -F/ "/node_modules/ && !/\/npm$/ {print $NF}" | xargs npm -g rm'
 
+# 3rd party requirements
+alias md5sum='md5 -r'
