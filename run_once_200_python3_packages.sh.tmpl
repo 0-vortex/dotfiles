@@ -1,19 +1,21 @@
 #!/bin/bash -e
 
+if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
+  echo "SKIP_PACKAGES_PYTHON: ${DRY_RUN}";
+  exit 0
+fi
+
+
+{{ if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+{{ end -}}
+
 # install Python3 global packages
 pip3 install --upgrade pip
 pip3 install --user \
   asciinema \
   dnstwist \
-  git-fame
-
-# install boring wakatime python cli
-python3 -c "$(wget -q -O - https://raw.githubusercontent.com/wakatime/vim-wakatime/master/scripts/install_cli.py)"
-
-{{ if eq .chezmoi.os "darwin" -}}
-
-# install Python3 mac packages
-pip3 install --user \
+  git-fame \
   git-filter-repo \
   httpie \
   terraform-compliance \
@@ -21,5 +23,3 @@ pip3 install --user \
   wafw00f \
   thefuck \
   ranger-fm
-
-{{ end -}}

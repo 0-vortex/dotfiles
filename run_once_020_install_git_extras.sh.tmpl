@@ -16,6 +16,6 @@ cd $script_dir
 {{ else if eq .chezmoi.os "linux" -}}
 
 # installing git extras from package manager
-apt install -y --no-install-recommends git-extras git-quick-stats
+sudo apt-get install -y --no-install-recommends git-extras git-quick-stats
 
 {{ end -}}

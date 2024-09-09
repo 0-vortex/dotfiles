@@ -1,8 +1,13 @@
 #!/bin/bash -e
 
+if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
+  echo "SKIP_PACKAGES_RUST: $DRY_RUN"
+  exit 0
+fi
+
 # install Rust global packages
 ~/.cargo/bin/cargo install \
-  exa \
+  eza \
   fd-find \
   ripgrep
 

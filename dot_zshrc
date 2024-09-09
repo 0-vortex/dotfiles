@@ -1,6 +1,8 @@
 #zmodload zsh/zprof
 
 source /etc/profile
+source ~/.vendor/antidote/antidote.zsh
+
 source ~/.zsh/plugins.zsh
 
 source ~/.zsh/env.zsh
@@ -9,4 +11,5 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/alias.zsh
 
 neofetch -s
+
 #zprof

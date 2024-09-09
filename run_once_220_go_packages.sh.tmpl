@@ -1,5 +1,11 @@
 #!/bin/bash -e
 
+if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
+  echo "SKIP_PACKAGES_GOLANG: $DRY_RUN"
+  exit 0
+fi
+
+
 # install Go global packages
 ~/.dotfiles/scripts/go.sh \
   charmbracelet/glow \

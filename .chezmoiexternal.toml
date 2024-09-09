@@ -28,8 +28,8 @@ url = "https://github.com/mbadolato/iTerm2-Color-Schemes/archive/master.tar.gz"
 exact = true
 stripComponents = 1
 
-[".vendor/zinit"]
+[".vendor/antidote"]
 type = "archive"
-url = "https://github.com/zdharma-continuum/zinit/archive/main.tar.gz"
+url = "https://github.com/mattmc3/antidote/archive/main.tar.gz"
 exact = true
 stripComponents = 1

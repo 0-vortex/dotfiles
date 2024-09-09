@@ -1,0 +1,5 @@
+denysdovhan/spaceship-prompt
+
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+unixorn/git-extra-commands
