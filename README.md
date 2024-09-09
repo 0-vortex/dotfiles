@@ -134,7 +134,7 @@ docker exec -it dotfiles zsh
 
 ### Rust global packages
 
-- [exa](https://crates.io/crates/exa)
+- [eza](https://crates.io/crates/eza)
 - [fd-find](https://crates.io/crates/fd-find)
 - [ripgrep](https://crates.io/crates/ripgrep)
 

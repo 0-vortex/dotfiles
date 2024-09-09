@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+{{ if eq .chezmoi.os "darwin" -}}
+
 themes=(
   "Argonaut"
   "Atom"
@@ -47,3 +49,5 @@ do
    :
    ~/.vendor/iterm/tools/import-scheme.sh "~/.vendor/iterm/schemes/$scheme.itermcolors"
 done
+
+{{ end -}}

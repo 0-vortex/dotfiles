@@ -25,7 +25,7 @@ export SPACESHIP_PROMPT_ORDER=(
   docker        # Docker section
   aws           # Amazon Web Services section
   conda         # conda virtualenv section
-  pyenv         # Pyenv section
+  python        # Python section
   kubectl       # Kubectl context section
   terraform     # Terraform workspace section
   exec_time     # Execution time
@@ -36,8 +36,7 @@ export SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 export SPACESHIP_TIME_SHOW=true
-export SPACESHIP_CONDA_SHOW=false
-export SPACESHIP_PYENV_SHOW=false
+export SPACESHIP_CONDA_SHOW=true
 export SPACESHIP_BATTERY_THRESHOLD=50
 export SPACESHIP_DOCKER_CONTEXT_SHOW=false
 export SPACESHIP_EXIT_CODE_SHOW=true

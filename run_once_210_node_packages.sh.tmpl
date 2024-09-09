@@ -3,6 +3,12 @@
 # set global prefix
 npm config set prefix '~/.npm-global'
 
+if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
+  echo "SKIP_PACKAGES_NODEJS: $DRY_RUN"
+  exit 0
+fi
+
+
 # install Node global packages
 ~/.dotfiles/scripts/npm.sh \
   commitizen \

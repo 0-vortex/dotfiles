@@ -11,8 +11,8 @@ alias lal='ls -al'
 
 alias d='dirs -v'
 alias dus='du -s'
-alias el='exa --tree --level=2 --long'
-alias ell='exa --header --long --git --group --created --modified --inode --grid'
+alias el='eza --tree --level=2 --long'
+alias ell='eza --header --long --git --group --created --modified --inode --grid'
 alias npmgc='npm ls -gp --depth=0 | awk -F/ "/node_modules/ && !/\/npm$/ {print $NF}" | xargs npm -g rm'
 
 # 3rd party requirements
