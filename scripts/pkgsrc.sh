@@ -7,8 +7,8 @@ if [ ! -d /opt/pkg ]; then
   # These packages are suitable for anyone running Big Sur (11.0.x) or newer on
   # Intel CPUs, and are updated from pkgsrc trunk every few days.
   #
-  BOOTSTRAP_TAR="bootstrap-macos11-trunk-arm64-20211207.tar.gz"
-  BOOTSTRAP_SHA="036b7345ebb217cb685e54c919c66350d55d819c"
+  BOOTSTRAP_TAR="bootstrap-macos12.3-trunk-arm64-20240426.tar.gz"
+  BOOTSTRAP_SHA="97cbb189458ff2765dbacbbaa691460a1d658e7c"
 
   # Download the bootstrap kit to the current directory.
   curl -O https://pkgsrc.joyent.com/packages/Darwin/bootstrap/${BOOTSTRAP_TAR}
@@ -17,8 +17,8 @@ if [ ! -d /opt/pkg ]; then
   echo "${BOOTSTRAP_SHA}  ${BOOTSTRAP_TAR}" | shasum -c-
 
   # Verify PGP signature.  This step is optional, and requires gpg.
-  curl -O https://pkgsrc.joyent.com/packages/Darwin/bootstrap/${BOOTSTRAP_TAR}.asc
-  curl -sS https://pkgsrc.joyent.com/pgp/1F32A9AD.asc | gpg2 --import
+  curl -O https://pkgsrc.smartos.org/packages/Darwin/bootstrap/${BOOTSTRAP_TAR}.asc
+  curl -sS https://pkgsrc.smartos.org/pgp/ED09C4B0.asc | gpg2 --import
   gpg2 --verify ${BOOTSTRAP_TAR}{.asc,}
 
   # Install bootstrap kit to /opt/pkg
