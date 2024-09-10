@@ -15,7 +15,7 @@ sudo /opt/pkg/bin/pkgin -y install \
   watchman \
   wget
 
-{{ else if eq .chezmoi.os "linux" -}}
+{{ else if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
 
 # updating package manager
 sudo apt-get update -y

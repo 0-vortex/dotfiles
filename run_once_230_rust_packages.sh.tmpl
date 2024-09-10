@@ -5,21 +5,14 @@ if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
   exit 0
 fi
 
+
 # install Rust global packages
 ~/.cargo/bin/cargo install \
+  bat \
+  dotenv-linter \
   eza \
   fd-find \
-  ripgrep
-
-{{ if eq .chezmoi.os "darwin" -}}
-
-# install Rust mac packages
-~/.cargo/bin/cargo install \
-  petname \
-  dotenv-linter \
-  xsv \
   hexyl \
-  sd \
-  bat
-
-{{ end -}}
+  petname \
+  ripgrep \
+  sd
