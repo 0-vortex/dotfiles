@@ -1,49 +1,34 @@
 #!/bin/bash -e
 
-# set global prefix
-npm config set prefix '~/.npm-global'
-
 if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
   echo "SKIP_PACKAGES_NODEJS: $DRY_RUN"
   exit 0
 fi
 
 
+# set global prefix
+npm config set prefix '~/.npm-global'
+
 # install Node global packages
 ~/.dotfiles/scripts/npm.sh \
+  catj \
+  code-to-graph \
   commitizen \
   depcheck \
+  diff-so-fancy \
+  dree \
   envinfo \
   git-recent \
   git-standup \
   git-split-diffs \
-  how-2 \
+  http-server \
   localtunnel \
+  madge \
   n \
   npm-check-updates \
   npkill \
   ntl \
-  quicktype
-
-{{ if eq .chezmoi.os "darwin" -}}
-
-# install Node mac packages
-~/.dotfiles/scripts/npm.sh \
-  api-spec-converter \
-  caniuse-cmd \
-  catj \
-  code-to-graph \
-  diff-so-fancy \
-  dree \
-  fx \
-  http-server \
-  jsnice \
-  madge \
-  openapi-to-graphql-cli \
   percollate \
   serve \
   standard-changelog \
-  tldr \
-  unminify
-
-{{ end -}}
+  tldr

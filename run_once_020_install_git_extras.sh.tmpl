@@ -13,7 +13,7 @@ cd ~/.vendor/git-quick-stats
 sudo make install
 cd $script_dir
 
-{{ else if eq .chezmoi.os "linux" -}}
+{{ else if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
 
 # installing git extras from package manager
 sudo apt-get install -y --no-install-recommends git-extras git-quick-stats

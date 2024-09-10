@@ -8,22 +8,10 @@ fi
 
 # install Go global packages
 ~/.dotfiles/scripts/go.sh \
-  charmbracelet/glow \
-  mikefarah/yq/v4 \
+  schollz/croc/v9 \
   muesli/duf \
+  charmbracelet/glow \
+  projectdiscovery/httpx/cmd/httpx \
   qeesung/image2ascii
 
 GO111MODULE=on go install -v "go.k6.io/xk6/cmd/xk6@latest"
-
-{{ if eq .chezmoi.os "darwin" -}}
-
-# install Go mac packages
-~/.dotfiles/scripts/go.sh \
-  jesseduffield/lazydocker \
-  jesseduffield/lazygit \
-  projectdiscovery/httpx/cmd/httpx \
-  projectdiscovery/subfinder/v2/cmd/subfinder \
-  charmbracelet/glow \
-  schollz/croc/v9
-
-{{ end -}}
