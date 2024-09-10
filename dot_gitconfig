@@ -70,3 +70,5 @@
   defaultBranch = main
 [pull]
   rebase = true
+[gpg]
+  program = gpg
