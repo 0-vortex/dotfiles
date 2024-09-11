@@ -216,7 +216,7 @@ gpg --armor --export keyname | pbcopy
 Assuming you are happy with your fork and just want to show it off, 
 change the following to your `docker` username and just ship it. 
 
-Here are manual examples of all the tags available in the current [Dockerfile](./Dockerfile), testing included.
+Here are manual examples of all the tags available in the current [Dockerfile](./Dockerfile.debian), testing included.
 
 ### Debian
 
