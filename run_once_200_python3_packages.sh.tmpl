@@ -7,7 +7,11 @@ fi
 
 
 {{ if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
+
+{{   if eq .chezmoi.osRelease.id "debian" }}
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+{{   end }}
+
 {{ end -}}
 
 # install Python3 global packages
