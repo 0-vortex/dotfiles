@@ -83,6 +83,5 @@ export PYPATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${HOME}/Li
 export GEMBINPATH="${GEM_HOME}/bin"
 
 export PATH="$PKGPATH:$NPMPATH:$NODENPATH:$GOBINPATH:$CARGOPATH:$PYPATH:$GEMBINPATH:$PATH"
-eval $(thefuck --alias)
 
 typeset -U PATH # Remove duplicates in $PATH
