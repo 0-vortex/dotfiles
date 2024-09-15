@@ -1,22 +1,19 @@
-FROM debian:trixie-20240904-slim AS debian
+FROM fedora:40 AS fedora
 
 ARG username=vortex
 ARG skipExtras=false
 
 # update package manager
-RUN apt-get update && apt-get -y upgrade && apt-get clean
-
-# install system requirements
-RUN apt-get install -y --no-install-recommends curl sudo zsh
+RUN dnf update --refresh -y && dnf clean all
 
 # install python
-RUN apt-get install -y --no-install-recommends python3 python3-pip
+RUN dnf install -y python3 python3-pip zsh
 
 # install go
-RUN apt-get install -y --no-install-recommends golang
+RUN dnf install -y golang
 
 # install node
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && sudo -E bash nodesource_setup.sh && apt-get install -y nodejs
+RUN curl -fsSL https://rpm.nodesource.com/setup_22.x | bash - && dnf install -y nodejs
 
 RUN \
   useradd -ms /usr/bin/zsh $username &&\

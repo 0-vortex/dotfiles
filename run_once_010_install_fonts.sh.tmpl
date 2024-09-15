@@ -1,11 +1,5 @@
 #!/bin/bash -e
 
-if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
-  echo "SKIP_PACKAGES_FONTS: ${DRY_RUN}";
-  exit 0
-fi
-
-
 {{ if eq .chezmoi.os "darwin" -}}
 
 # cleaning user fonts
@@ -19,7 +13,14 @@ cp ~/.vendor/font-jetbrains/ttf/*.ttf ~/Library/Fonts
 
 {{ else if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
 
-# installing fonts from package manager
+echo "installing fonts for osRelease: {{ .chezmoi.osRelease.id }}"
+
+{{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu")) -}}
 sudo apt-get install -y --no-install-recommends fonts-powerline fonts-jetbrains-mono
+{{   else if eq .chezmoi.osRelease.id "arch" -}}
+sudo pacman -Sy --noconfirm powerline-fonts ttf-jetbrains-mono
+{{   else if eq .chezmoi.osRelease.id "fedora" -}}
+sudo dnf install -y powerline-fonts jetbrains-mono-fonts-all
+{{   end -}}
 
 {{ end -}}

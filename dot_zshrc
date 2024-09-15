@@ -1,6 +1,6 @@
 #zmodload zsh/zprof
 
-source /etc/profile
+[[ -f /etc/profile ]] && source /etc/profile
 source ~/.vendor/antidote/antidote.zsh
 
 source ~/.zsh/plugins.zsh

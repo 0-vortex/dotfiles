@@ -17,11 +17,9 @@ sudo /opt/pkg/bin/pkgin -y install \
 
 {{ else if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
 
-# updating package manager
-sudo apt-get update -y
-sudo apt-get upgrade -y
+echo "installing dependencies for osRelease: {{ .chezmoi.osRelease.id }}"
 
-# installing binary GNU packages
+{{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu")) -}}
 sudo apt-get install -y --no-install-recommends \
   build-essential \
   curl \
@@ -31,7 +29,33 @@ sudo apt-get install -y --no-install-recommends \
   zsh \
   mc \
   neofetch \
-  watchman \
   wget
+{{   else if eq .chezmoi.osRelease.id "arch" -}}
+sudo pacman -Sy --noconfirm \
+  base-devel \
+  curl \
+  git \
+  gnupg \
+  sudo \
+  zsh \
+  mc \
+  neofetch \
+  wget
+{{   else if eq .chezmoi.osRelease.id "fedora" -}}
+sudo dnf install -y \
+  make\
+  automake\
+  gcc\
+  gcc-c++\
+  kernel-devel\
+  curl\
+  git\
+  gnupg\
+  sudo\
+  zsh\
+  neofetch\
+  wget\
+  which
+{{   end -}}
 
 {{ end -}}
