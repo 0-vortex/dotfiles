@@ -56,6 +56,19 @@ sudo dnf install -y \
   neofetch\
   wget\
   which
+{{   else if eq .chezmoi.osRelease.id "alpine" -}}
+sudo apk add --update \
+  build-base \
+  curl \
+  git \
+  gnupg \
+  sudo \
+  zsh \
+  mc \
+  neofetch \
+  wget
+# alpine profile is dirty
+sudo rm -rf /etc/profile
 {{   end -}}
 
 {{ end -}}

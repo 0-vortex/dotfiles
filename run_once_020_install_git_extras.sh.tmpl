@@ -34,6 +34,9 @@ sudo dnf install -y git-extras
 git clone https://github.com/arzzen/git-quick-stats.git && cd git-quick-stats
 sudo make install
 cd .. && rm -rf git-quick-stats
+{{   else if eq .chezmoi.osRelease.id "alpine" -}}
+sudo bash -c "echo \"@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing\" >> /etc/apk/repositories"
+sudo apk add --update git-extras@testing git-quick-stats@testing
 {{   end -}}
 
 {{ end -}}

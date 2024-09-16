@@ -1,0 +1,43 @@
+FROM alpine:3.20.3 AS alpine
+
+ARG username=vortex
+ARG skipExtras=false
+
+# update package manager
+RUN apk update && apk add --update
+
+# install system requirements
+RUN apk add --update bash curl git sudo zsh
+
+# install python
+RUN apk add --update gcc linux-headers python3 python3-dev py3-pip
+
+# install go
+RUN apk add --update go
+
+# install node
+RUN apk add --update nodejs-current npm
+
+RUN \
+  adduser -Ds /bin/zsh "${username}" $username &&\
+  echo "$username ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$username &&\
+  chmod 0440 /etc/sudoers.d/$username &&\
+  chown -R $username:$username /home/$username &&\
+  rm -rf /etc/profile.d
+
+USER $username
+WORKDIR /home/$username/
+
+# install rust
+RUN curl --proto '=https' --tlsv1.2 -fsLS https://sh.rustup.rs | sh -s -- -y --no-modify-path --profile minimal
+
+ENV PATH="/home/$username/.cargo/bin:${PATH}"
+ENV DRY_RUN="$skipExtras"
+
+COPY --chown=$username:$username . .dotfiles
+
+RUN ./.dotfiles/install.sh
+
+ENTRYPOINT ["/bin/zsh"]
+
+CMD ["--login"]
