@@ -8,7 +8,7 @@ fi
 
 {{ if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
 
-{{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "arch")) -}}
+{{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "alpine")) -}}
 sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
 {{   end }}
 
@@ -24,5 +24,4 @@ pip3 install --user \
   httpie \
   terraform-compliance \
   wafw00f \
-  thefuck \
   ranger-fm

@@ -21,6 +21,10 @@ sudo apt-get install -y --no-install-recommends fonts-powerline fonts-jetbrains-
 sudo pacman -Sy --noconfirm powerline-fonts ttf-jetbrains-mono
 {{   else if eq .chezmoi.osRelease.id "fedora" -}}
 sudo dnf install -y powerline-fonts jetbrains-mono-fonts-all
+{{   else if eq .chezmoi.osRelease.id "alpine" -}}
+git clone https://github.com/powerline/fonts.git --depth=1 && cd fonts
+./install.sh && cd .. && rm -rf fonts
+sudo apk add --update font-jetbrains-mono
 {{   end -}}
 
 {{ end -}}
