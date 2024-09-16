@@ -1,5 +1,5 @@
 # command replacements
-alias cat='bat'
+alias cat='bat -A --terminal-width -1'
 alias du='duf'
 alias find='fd'
 
