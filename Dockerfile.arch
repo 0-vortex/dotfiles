@@ -2,23 +2,14 @@ FROM --platform=linux/amd64 archlinux:base-20240908.0.261281 AS arch
 
 ARG username=vortex
 ARG skipExtras=false
-
-# update package manager
-RUN pacman -Syu --noconfirm
-
-# install system requirements
-RUN pacman -Sy --noconfirm curl sudo
-
-# install python
-RUN pacman -Sy --noconfirm python3 python-pip zsh
-
-# install go
-RUN pacman -Sy --noconfirm go
-
-# install node
-RUN pacman -Sy --noconfirm nodejs npm
-
 ENV TZ=America/Los_Angeles
+
+RUN pacman -Syu --noconfirm &&\
+    pacman -Sy --noconfirm curl sudo &&\
+    pacman -Sy --noconfirm python3 python-pip zsh &&\
+    pacman -Sy --noconfirm go &&\
+    pacman -Sy --noconfirm nodejs npm &&\
+    rm -rf /var/cache/pacman/pkg/*
 
 RUN \
   useradd -ms /usr/bin/zsh $username &&\
@@ -32,7 +23,6 @@ RUN \
 USER $username
 WORKDIR /home/$username/
 
-# install rust
 RUN curl --proto '=https' --tlsv1.2 -fsLS https://sh.rustup.rs | sh -s -- -y --no-modify-path --profile default
 
 ENV PATH="/home/$username/.cargo/bin:${PATH}"

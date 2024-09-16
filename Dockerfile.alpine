@@ -3,20 +3,12 @@ FROM alpine:3.20.3 AS alpine
 ARG username=vortex
 ARG skipExtras=false
 
-# update package manager
-RUN apk update && apk add --update
-
-# install system requirements
-RUN apk add --update bash curl git sudo zsh
-
-# install python
-RUN apk add --update gcc linux-headers python3 python3-dev py3-pip
-
-# install go
-RUN apk add --update go
-
-# install node
-RUN apk add --update nodejs-current npm
+RUN apk update && apk add --update &&\
+    apk add --update bash curl git sudo zsh &&\
+    apk add --update gcc linux-headers python3 python3-dev py3-pip &&\
+    apk add --update go &&\
+    apk add --update nodejs-current npm &&\
+    rm -rf /var/cache/apk/*
 
 RUN \
   adduser -Ds /bin/zsh "${username}" $username &&\
@@ -28,7 +20,6 @@ RUN \
 USER $username
 WORKDIR /home/$username/
 
-# install rust
 RUN curl --proto '=https' --tlsv1.2 -fsLS https://sh.rustup.rs | sh -s -- -y --no-modify-path --profile minimal
 
 ENV PATH="/home/$username/.cargo/bin:${PATH}"
