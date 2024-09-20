@@ -24,11 +24,11 @@ sudo apt-get install -y --no-install-recommends git-extras git-quick-stats
 # install git-extras from aur
 curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/git-extras.tar.gz
 tar -xvf git-extras.tar.gz && cd git-extras && makepkg
-sudo pacman -U --noconfirm git-extras-7.2.0-1-any.pkg.tar.zst && cd ..
+sudo pacman -U --noconfirm git-extras*.pkg.tar.zst && cd ..
 # install git-extras from aur
 curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/git-quick-stats.tar.gz
 tar -xvf git-quick-stats.tar.gz && cd git-quick-stats && makepkg
-sudo pacman -U --noconfirm git-quick-stats-2.5.6-2-any.pkg.tar.zst && cd ..
+sudo pacman -U --noconfirm git-quick-stats*.pkg.tar.zst && cd ..
 {{   else if eq .chezmoi.osRelease.id "fedora" -}}
 sudo dnf install -y git-extras
 git clone https://github.com/arzzen/git-quick-stats.git && cd git-quick-stats
