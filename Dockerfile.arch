@@ -5,11 +5,10 @@ ARG skipExtras=false
 ENV TZ=America/Los_Angeles
 
 RUN pacman -Syu --noconfirm &&\
-    pacman -Sy --noconfirm curl sudo &&\
-    pacman -Sy --noconfirm python3 python-pip zsh &&\
+    pacman -Sy --noconfirm curl sudo zsh &&\
+    pacman -Sy --noconfirm python3 python-pip &&\
     pacman -Sy --noconfirm go &&\
-    pacman -Sy --noconfirm nodejs npm &&\
-    rm -rf /var/cache/pacman/pkg/*
+    pacman -Sy --noconfirm nodejs npm
 
 RUN \
   useradd -ms /usr/bin/zsh $username &&\
