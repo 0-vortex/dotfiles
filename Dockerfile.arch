@@ -1,4 +1,5 @@
-FROM --platform=linux/amd64 archlinux:base-20240908.0.261281 AS arch
+# archlinux:base-20240908.0.261281
+FROM --platform=linux/amd64 archlinux@sha256:dbcf6a01a24a56c96b179d40f2425fd257f58e6ff8c5c54c1aa66251442d6f80 AS arch
 
 ARG username=vortex
 ARG skipExtras=false

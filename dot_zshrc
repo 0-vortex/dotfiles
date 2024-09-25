@@ -10,6 +10,6 @@ source ~/.zsh/options.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/alias.zsh
 
-neofetch -s
+[[ -x "$(command -v neofetch)" ]] && neofetch -s
 
 #zprof
