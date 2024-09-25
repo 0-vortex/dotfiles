@@ -1,4 +1,5 @@
-FROM fedora:40 AS fedora
+# fedora:40
+FROM fedora@sha256:d0207dbb078ee261852590b9a8f1ab1f8320547be79a2f39af9f3d23db33735e AS fedora
 
 ARG username=vortex
 ARG skipExtras=false

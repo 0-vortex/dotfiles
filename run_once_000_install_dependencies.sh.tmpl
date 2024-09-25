@@ -7,11 +7,16 @@
 
 # installing binary GNU packages
 sudo /opt/pkg/bin/pkgin -y install \
+  bat \
   bc-gh \
+  eza \
+  fd-find \
   gnuls \
   jq \
   mc \
   neofetch \
+  ripgrep \
+  sd \
   watchman \
   wget
 
@@ -21,51 +26,71 @@ echo "installing dependencies for osRelease: {{ .chezmoi.osRelease.id }}"
 
 {{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu")) -}}
 sudo apt-get install -y --no-install-recommends \
+  bat \
   build-essential \
   curl \
+  eza \
+  fd-find \
   git \
   gnupg \
   sudo \
   zsh \
   mc \
   neofetch \
+  ripgrep \
+  sd \
   wget
 {{   else if eq .chezmoi.osRelease.id "arch" -}}
 sudo pacman -Sy --noconfirm \
+  bat \
   base-devel \
   curl \
+  eza \
+  fd \
   git \
   gnupg \
   sudo \
   zsh \
   mc \
   neofetch \
+  ripgrep \
+  sd \
   wget
 {{   else if eq .chezmoi.osRelease.id "fedora" -}}
 sudo dnf install -y \
-  make\
-  automake\
-  gcc\
-  gcc-c++\
-  kernel-devel\
-  curl\
-  git\
-  gnupg\
-  sudo\
-  zsh\
-  neofetch\
-  wget\
+  bat \
+  make \
+  automake \
+  eza \
+  gcc \
+  gcc-c++ \
+  kernel-devel \
+  curl \
+  fd \
+  git \
+  gnupg \
+  sudo \
+  zsh \
+  neofetch \
+  ripgrep \
+  sd \
+  wget \
   which
 {{   else if eq .chezmoi.osRelease.id "alpine" -}}
 sudo apk add --update \
+  bat \
   build-base \
   curl \
+  eza \
+  fd \
   git \
   gnupg \
   sudo \
   zsh \
   mc \
   neofetch \
+  ripgrep \
+  sd \
   wget
 # alpine profile is dirty
 sudo rm -rf /etc/profile

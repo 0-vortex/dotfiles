@@ -1,4 +1,5 @@
-FROM alpine:3.20.3 AS alpine
+# alpine:3.20.3
+FROM alpine@sha256:beefdbd8a1da6d2915566fde36db9db0b524eb737fc57cd1367effd16dc0d06d AS alpine
 
 ARG username=vortex
 ARG skipExtras=false
