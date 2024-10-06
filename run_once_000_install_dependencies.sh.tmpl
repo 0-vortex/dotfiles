@@ -24,7 +24,7 @@ sudo /opt/pkg/bin/pkgin -y install \
 
 echo "installing dependencies for osRelease: {{ .chezmoi.osRelease.id }}"
 
-{{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu")) -}}
+{{   if (or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "kali")) -}}
 sudo apt-get install -y --no-install-recommends \
   bat \
   build-essential \
@@ -66,7 +66,7 @@ sudo dnf install -y \
   gcc-c++ \
   kernel-devel \
   curl \
-  fd \
+  fd-find \
   git \
   gnupg \
   sudo \

@@ -1,5 +1,5 @@
 # kalilinux/kali-last-release:latest
-FROM kalilinux/kali-last-release@sha256:e93f400c635c7d9ef07ccb01b6f844a6b078a6160f198e7ec985a867be1132d1 AS kali
+FROM kalilinux/kali-last-release@sha256:d58bc738b023ea499b1191154773d82ed4f7420dcbf7fb292767386809472400 AS kali
 
 ARG username=vortex
 ARG skipExtras=false
