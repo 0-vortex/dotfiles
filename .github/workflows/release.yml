@@ -16,10 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          path: ~
+          path: /github/home/.dotfiles
 
       - name: Install dotfiles
-        run: ./install.sh
+        run: |
+          ls -lahH
+          pwd
+          ls -lahH /github/home
+          ./install.sh
 
       - name: Dump data
         run: |
