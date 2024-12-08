@@ -5,11 +5,11 @@ if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
   exit 0
 fi
 
-{{- if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
+{{ if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
   SCRIPTS_FOLDER="$HOME/.dotfiles/scripts"
-{{- else -}}
+{{ else -}}
   SCRIPTS_FOLDER="/__w/dotfiles/dotfiles/scripts"
-{{- end -}}
+{{ end -}}
 
 # install Go global packages
 $SCRIPTS_FOLDER/go.sh \
