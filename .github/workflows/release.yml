@@ -29,6 +29,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs:
+      - codespaces
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

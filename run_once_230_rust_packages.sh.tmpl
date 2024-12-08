@@ -6,13 +6,9 @@ if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
 fi
 
 {{ if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
-  CARGO_BIN="$HOME/.cargo/bin/cargo"
-{{ else -}}
-  CARGO_BIN="cargo"
-{{ end -}}
-
 # install Rust global packages
-"$CARGO_BIN" install \
+"$HOME/.cargo/bin/cargo" install \
   dotenv-linter \
   hexyl \
   petname
+{{ end -}}
