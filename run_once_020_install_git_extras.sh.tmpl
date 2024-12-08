@@ -25,17 +25,18 @@ sudo apt-get install -y --no-install-recommends git-extras git-quick-stats
 curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/git-extras.tar.gz
 tar -xvf git-extras.tar.gz && cd git-extras && makepkg
 sudo pacman -U --noconfirm git-extras*.pkg.tar.zst && cd ..
+rm -rf git-extras*
 # install git-extras from aur
 curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/git-quick-stats.tar.gz
 tar -xvf git-quick-stats.tar.gz && cd git-quick-stats && makepkg
 sudo pacman -U --noconfirm git-quick-stats*.pkg.tar.zst && cd ..
+rm -rf git-quick-stats*
 {{   else if eq .chezmoi.osRelease.id "fedora" -}}
 sudo dnf install -y git-extras
 git clone https://github.com/arzzen/git-quick-stats.git && cd git-quick-stats
 sudo make install
-cd .. && rm -rf git-quick-stats
+cd .. && rm -rf git-quick-stats*
 {{   else if eq .chezmoi.osRelease.id "alpine" -}}
-sudo bash -c "echo \"@testing https://dl-cdn.alpinelinux.org/alpine/edge/testing\" >> /etc/apk/repositories"
 sudo apk add --update git-extras@testing git-quick-stats@testing
 {{   end -}}
 

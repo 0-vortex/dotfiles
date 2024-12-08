@@ -5,12 +5,17 @@ if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
   exit 0
 fi
 
+SCRIPTS_FOLDER="$HOME/.dotfiles/scripts"
+
+{{ if (eq .chezmoi.os ".codespaces") -}}
+  SCRIPTS_FOLDER="/__w/dotfiles/dotfiles/scripts"
+{{ end -}}
 
 # set global prefix
 npm config set prefix "$HOME/.npm-global"
 
 # install Node global packages
-~/.dotfiles/scripts/npm.sh \
+$SCRIPTS_FOLDER/npm.sh \
   commitizen \
   depcheck \
   dree \

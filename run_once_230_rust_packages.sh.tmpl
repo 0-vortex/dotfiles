@@ -5,9 +5,8 @@ if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
   exit 0
 fi
 
-
 # install Rust global packages
-~/.cargo/bin/cargo install \
+"$HOME"/.cargo/bin/cargo install \
   dotenv-linter \
   hexyl \
   petname

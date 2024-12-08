@@ -1,5 +1,5 @@
-# archlinux:base-20240929.0.266368
-FROM --platform=linux/amd64 archlinux@sha256:c8501ab8b970205491501ba01d9bce9a04d70537fc15596360f1ce1011b08569 AS arch
+# archlinux:base-20241201.0.284684
+FROM --platform=linux/amd64 archlinux@sha256:ad18112a3888d427b18a004309eff649418b68ddee0e71004c36b87630baac4c AS arch
 
 ARG username=vortex
 ARG skipExtras=false

@@ -1,5 +1,5 @@
-# debian:trixie-20240926-slim
-FROM debian@sha256:c63174f799a74411a0290f25086fdc5dc939aa1f8971a16ad6fb1b7658a25126 AS debian
+# debian:trixie-20241202-slim
+FROM debian@sha256:ea037584ebc42a1144ff5ca16add337920cd4cad175431ea0ee3310a0133c0ba AS debian
 
 ARG username=vortex
 ARG skipExtras=false
