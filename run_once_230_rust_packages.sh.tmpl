@@ -5,7 +5,7 @@ if [[ -n "${DRY_RUN}" && "${DRY_RUN}" == true ]]; then
   exit 0
 fi
 
-{{ if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
+{{ if (or (and (eq .chezmoi.os "linux") (not .codespaces)) (eq .chezmoi.os "darwin")) -}}
 # install Rust global packages
 "$HOME/.cargo/bin/cargo" install \
   dotenv-linter \

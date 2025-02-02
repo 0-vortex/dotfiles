@@ -1,4 +1,18 @@
 # Setting and editing of environment variables.
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
 # Variables
 export CLICOLOR="YES"
@@ -81,7 +95,16 @@ export CARGOPATH="${HOME}/.cargo/bin"
 export PKGPATH="/opt/pkg/bin:/opt/pkg/sbin:/opt/pkg/gnu/bin"
 export PYPATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${HOME}/Library/Python/3.10/bin:${HOME}/.local/bin"
 export GEMBINPATH="${GEM_HOME}/bin"
+export POSTGRESPATH="/Applications/Postgres.app/Contents/Versions/16/bin"
+export LMSTUDIOPATH="${HOME}/.cache/lm-studio/bin"
 
-export PATH="$PKGPATH:$NPMPATH:$NODENPATH:$GOBINPATH:$CARGOPATH:$PYPATH:$GEMBINPATH:$PATH"
+export PATH="$PKGPATH:$NPMPATH:$NODENPATH:$GOBINPATH:$CARGOPATH:$PYPATH:$GEMBINPATH:$POSTGRESPATH:$LMSTUDIOPATH:$PATH"
+
+source "${HOME}/.deno/env"
 
 typeset -U PATH # Remove duplicates in $PATH
+
+if [[ ":$FPATH:" != *":/Users/vortex/.zsh/completions:"* ]]; then export FPATH="/Users/vortex/.zsh/completions:$FPATH"; fi
+
+autoload -Uz compinit
+compinit
