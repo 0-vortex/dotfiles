@@ -95,7 +95,7 @@ export CARGOPATH="${HOME}/.cargo/bin"
 export PKGPATH="/opt/pkg/bin:/opt/pkg/sbin:/opt/pkg/gnu/bin"
 export PYPATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${HOME}/Library/Python/3.10/bin:${HOME}/.local/bin"
 export GEMBINPATH="${GEM_HOME}/bin"
-export POSTGRESPATH="/Applications/Postgres.app/Contents/Versions/16/bin"
+export POSTGRESPATH="/Applications/Postgres.app/Contents/Versions/17/bin"
 export LMSTUDIOPATH="${HOME}/.cache/lm-studio/bin"
 
 export PATH="$PKGPATH:$NPMPATH:$NODENPATH:$GOBINPATH:$CARGOPATH:$PYPATH:$GEMBINPATH:$POSTGRESPATH:$LMSTUDIOPATH:$PATH"

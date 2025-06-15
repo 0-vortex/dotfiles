@@ -1,7 +1,6 @@
 prefix=~/.npm-global
 progress=false
 loglevel=info
-email=ted.vortex@gmail.com
 audit=false
 audit-level=moderate
 timing=false
