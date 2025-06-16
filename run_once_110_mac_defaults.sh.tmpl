@@ -3,7 +3,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 
 # configuring mac settings
-sudo ~/.dotfiles/scripts/monterey.sh
+sudo ~/.dotfiles/scripts/sequoia.sh
 
 # configuring application defaults
 ~/.dotfiles/defaults/com.crystalidea.macsfancontrol.sh
@@ -12,18 +12,18 @@ sudo ~/.dotfiles/scripts/monterey.sh
 ~/.dotfiles/defaults/org.m0k.transmission.sh
 ~/.dotfiles/defaults/uk.co.opencommunity.vienna2.sh
 
-# installing atom packages
-~/.dotfiles/scripts/apm.sh \
-  autocomplete-json \
-  dash-ui \
-  docblockr \
-  git-plus \
-  highlight-selected \
-  language-graphql \
-  minimap \
-  project-plus \
-  seti-syntax \
-  tree-view-git-status \
-  wakatime
+# installing atom packages (deprecated)
+#~/.dotfiles/scripts/apm.sh \
+#  autocomplete-json \
+#  dash-ui \
+#  docblockr \
+#  git-plus \
+#  highlight-selected \
+#  language-graphql \
+#  minimap \
+#  project-plus \
+#  seti-syntax \
+#  tree-view-git-status \
+#  wakatime
 
 {{ end -}}

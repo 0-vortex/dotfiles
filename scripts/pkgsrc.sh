@@ -11,7 +11,7 @@ if [ ! -d /opt/pkg ]; then
   BOOTSTRAP_SHA="97cbb189458ff2765dbacbbaa691460a1d658e7c"
 
   # Download the bootstrap kit to the current directory.
-  curl -O https://pkgsrc.joyent.com/packages/Darwin/bootstrap/${BOOTSTRAP_TAR}
+  curl -O https://pkgsrc.smartos.org/packages/Darwin/bootstrap/${BOOTSTRAP_TAR}
 
   # Verify the SHA1 checksum.
   echo "${BOOTSTRAP_SHA}  ${BOOTSTRAP_TAR}" | shasum -c-

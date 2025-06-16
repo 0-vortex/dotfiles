@@ -1,4 +1,4 @@
-prefix=~/.npm-global
+prefix=/Users/vortex/.npm-global
 progress=false
 loglevel=info
 audit=false

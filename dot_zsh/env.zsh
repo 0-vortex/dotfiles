@@ -86,6 +86,8 @@ export SPACESHIP_EXIT_CODE_SHOW=true
 
 export GEM_HOME="${HOME}/.gem"
 
+export GPG_TTY=$(tty)
+
 # Path
 export CHEZMOIPATH="${HOME}/.local/bin"
 export NPMPATH="${HOME}/.npm-global/bin"
@@ -93,7 +95,7 @@ export NODENPATH="${N_PREFIX}/bin"
 export GOBINPATH="$(go env GOPATH)/bin"
 export CARGOPATH="${HOME}/.cargo/bin"
 export PKGPATH="/opt/pkg/bin:/opt/pkg/sbin:/opt/pkg/gnu/bin"
-export PYPATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${HOME}/Library/Python/3.10/bin:${HOME}/.local/bin"
+export PYPATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${HOME}/Library/Python/3.13/bin:${HOME}/.local/bin"
 export GEMBINPATH="${GEM_HOME}/bin"
 export POSTGRESPATH="/Applications/Postgres.app/Contents/Versions/17/bin"
 export LMSTUDIOPATH="${HOME}/.cache/lm-studio/bin"
