@@ -13,10 +13,10 @@ defaults write com.googlecode.iterm2 HideMenuBarInFullscreen -int 0
 defaults write com.googlecode.iterm2 HideScrollbar -int 1
 defaults write com.googlecode.iterm2 HideTab -int 0
 defaults write com.googlecode.iterm2 Hotkey -int 1
-defaults write com.googlecode.iterm2 HotkeyChar -int 167
-defaults write com.googlecode.iterm2 HotkeyCode -int 10
+defaults write com.googlecode.iterm2 HotkeyChar -int 96
+defaults write com.googlecode.iterm2 HotkeyCode -int 50
 defaults write com.googlecode.iterm2 HotkeyMigratedFromSingleToMulti -int 1
-defaults write com.googlecode.iterm2 HotkeyModifiers -int 1048840
+defaults write com.googlecode.iterm2 HotkeyModifiers -int 1573160
 defaults write com.googlecode.iterm2 PasteTabToStringTabStopSize -int 4
 defaults write com.googlecode.iterm2 PreventEscapeSequenceFromClearingHistory -int 0
 defaults write com.googlecode.iterm2 SUFeedURL -string "https://iterm2.com/appcasts/testing_modern.xml?shard=72"
